@@ -1,0 +1,156 @@
+/* styles.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ftm: 20px;
+  --gen-bg: #040e0e;
+  --gen-bg-secondary:  #234e52;
+  --gen-bg-ter:  #319795;;
+}
+.fixed-top {
+  position: fixed;
+  top: var(--ftm);
+  left: var(--ftm);
+  right: var(--ftm);
+}
+
+.mobileMenu {
+  position: fixed;
+  top:0;
+  right:0;
+  height: 100vh;
+  width: 60vw;
+}
+
+.btnDisabled{
+  pointer-events: none;
+}
+
+
+/*HERO_-_--_-_-_-_-_-_-_-_-_--_*/
+.Hero1{
+  background-image: url("./assets/img/bg1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.BG {
+  filter: blur(2px);
+}
+
+.z51{
+  z-index: 51;
+  margin: auto;
+  position: absolute;
+  padding: 80px;
+  font-weight: bold;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.BACK-BTN:hover {
+  transform: scale(1.1);
+}
+
+
+.ME {
+  transform: scale(7);
+  
+}
+
+.SEC1 {
+  transform: scale(1);
+  background-color: rgba(0,128,128,.5) ;
+   filter: drop-shadow(12px 12px 16px rgb(23, 52, 89));
+}
+
+.Nav{
+  background-color: rgba(0,128,128,.2);
+  box-shadow: 0px 3px 20px 2px black;
+}
+
+.MenuNav {
+  backdrop-filter: blur(5px);
+  box-shaddow: 2px 0px 14px 2px black;
+  background-color: rgba(0,128,128,.3);
+}
+
+.About{
+  background: linear-gradient(180deg, var(--gen-bg), var(--gen-bg-secondary));
+}
+
+.PROF-IMG {
+  width: min-content;
+}
+
+/*img {*/
+/*   max-width: 100%;*/
+/*   height: auto;*/
+/*}*/
+
+.HOBCONT{
+  min-height: 300px;
+  min-width: 300px;
+  border-radius: 20px;
+  box-shadow: ;
+}
+
+.Hobbies {
+  margin: auto;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  max-height: 500px;
+  max-width: 70vw;
+  padding: 20px;
+}
+@media(min-width: 900px){
+  .ABOUT-ME {
+    -webkit-box-reflfect: top 1px linear-gradient(transparent,transparent,rgba(0,0,0,.8)) ;
+  }
+  .Hobbies {
+    padding: 80px;
+  height: 2000px;
+  -webkit-box-reflect: below -120px linear-gradient(transparent,transparent,#000f);
+  }
+}
+
+@media(max-width:500px){
+  .Hobbies{
+  /*-webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#000f);*/
+    max-width: 90vw;
+  }
+  .HOBCONT{
+    min-height: 200px;
+    min-width: 200px;
+  }
+}
+
+.MYHOBBIESLABEL {
+  -webkit-box-reflect: below -50px linear-gradient(transparent,transparent,#000f)
+}
+
+.Hobbies:hover .HOBCONT{
+  opacity:.1;
+}
+
+.Hobbies .HOBCONT:hover {
+  opacity:1;
+}
+
+::-webkit-scrollbar{
+  width:5px;
+  background:teal;
+  display: none;
+}
+
+.min-h-mobile{
+  min-height: 70vh;
+}
