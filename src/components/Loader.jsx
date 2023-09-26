@@ -31,7 +31,7 @@ export default class Loader extends React.Component {
          />
          <Player
            ref={this.lotRef}
-           className="md:w-48 w-32"
+           className="md:w-48 w-32 "
             autoplay
             speed={10/2 - 3}
             loop={false}
