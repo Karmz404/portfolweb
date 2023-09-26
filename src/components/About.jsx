@@ -2,7 +2,8 @@ import React from "react";
 import {motion, AnimatePresence} from "framer-motion";
 import ME from "../assets/img/me.png"
 import ME2 from "../assets/img/me.webp"
-import Hobbies from "./Hobbies.jsx";
+import Projects from "./Projects.jsx";
+import Navbar from "./Navbar.jsx";
 
 class About extends React.Component{
   constructor(){
@@ -58,7 +59,7 @@ componentDidMount(){
  // RWNDDEEEEEEEEEEEERRRRRR
   render(){
     return (
-         <motion.div id="About" className="About p-4 py-7 md:py-40 ">
+         <motion.div id="About" className="About bordfer-2 pb-40 py-14 md:pt-16">
       <AnimatePresence>
           {/*this.state.op ? <motion.div exit={{x:-400}} transition={{duration:7}} className="bg-teal-100">ONE PIECE</motion.div> : null*/}
        </AnimatePresence>   
@@ -66,7 +67,7 @@ componentDidMount(){
       <AnimatePresence>
              {
                !this.state.hob ? (
-             <motion.div  variants={this.aboutVar} initial="hidden" animate="visible"  className="text-teal-100 ABOUT-ME flex flex-col md:flex-row items-center justify-evenly bordfer-2 p-3">
+             <motion.div  variants={this.aboutVar} initial="hidden" animate="visible"  className="text-teal-100 ABOUT-ME flex flex-col md:flex-row items-center justify-evenly ">
                 <img className="w-1/2 border-b-2 border-teal-400 md:border-r-2 md:border-b-0 p-2" src={ME2} />
                 <div className="w-96 bogrder text-center my-12 px-10 md:px-0">
                   <h4 className="font-medium md:border-b-2 border-teal-100 w-1/2 m-auto text-teal-300">ABOUT ME</h4>
@@ -78,26 +79,25 @@ componentDidMount(){
                      <p>School: Siquijor State College</p>
                      <p>Course: Bs Info-Tech</p>
                      <p>Home Address: Bogo, Maria, Siquijor</p>
-                     
-                     <div onClick={() => {this.handleHobbies()}} className="cursor-crosshair HOBBIES bg-teal-600 w-1/2 m-auto px-7 py-3 text-center my-5"> MY HOBBIES </div>
-                     
-                     
+                     <div onClick={() => {this.handleHobbies()}} className="cursor-crosshair HOBBIES bg-teal-600 w-1/2 m-auto px-7 py-3 text-center my-5"> MY PROJECTS </div>
                   </div>
                 </div>
              </motion.div>
                 ) : (
                   <>
-                    <div className="p-5 font-light text-teal-100 flex justify-between">
-                       <h5 className="MYHOBBIESLABEL">MY HOBBIES</h5>
+                    <div className="p-5 font-light text-teal-100 flex justify-between md:mx-20">
+                       <h5 className="MYHOBBIESLABEL">MY PROJECTS</h5>
                        <button onClick={this.handleHobbies.bind(this)} className="BACK-BTN backdrop-blur-3xl p-1">Back</button>
                        
                     </div>
-                    <Hobbies />
+                    <Projects />
                   </>
                   )
              }
        </AnimatePresence>   
          
+             <Navbar style={{zIndex:-44222}} openProjects={this.handleHobbies.bind(this)} />
+  
          </motion.div>
       )
   }

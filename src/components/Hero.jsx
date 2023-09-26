@@ -4,7 +4,7 @@ import BG2 from "../assets/img/bg2.png.jpg"
 import ME2 from "../assets/img/fotr.webp"
 import CR2 from "../assets/img/r.webp"
 import CL2 from "../assets/img/l.webp"
-
+import { TypeAnimation } from 'react-type-animation';
 
 export default class Hero extends React.Component {
    constructor(props){
@@ -13,6 +13,7 @@ export default class Hero extends React.Component {
        inpVal : ""
      };
      this.fullscreenmobile = "min-h-mobile";
+     this.fullscreendesk = "min-h-deskt imgWidth";
    }
  
  // VARIANTS___-_-_-_-_--_-_-_-_-_-_-_-_-_--_-_-_-_
@@ -73,7 +74,7 @@ box1Var = {
     //opacity:[0,1],
     transition:{
       repeatType: "mirror",
-      repeat:Infinity,
+      repeat:0,
       duration: 6
     }
   },
@@ -103,7 +104,7 @@ socmedItemsVar={
     opacity:[0,1],
     transition:{
       repeatType: "mirror",
-      repeat:Infinity,
+      repeat:2,
       duration: 6
     }
     
@@ -129,15 +130,43 @@ socmedItemsVar={
  // RWNDDEEEEEEEEEEEERRRRRR
   render() {
     return (
-        <motion.div  className={`Hero brightness-75 overflow-hidden pointer-events-auto bg-slate-900 overflow-x-hidden relative lg:min-h-screen ${this.fullscreenmobile}`}>
-           <img className={`z-0 BG lg:min-h-screen ${this.fullscreenmobile}`} src={BG2} />
+        <motion.div  className={`Hero brightness-75 overflow-hidden pointer-events-auto bg-slate-900 overflow-x-hidden relative ${this.fullscreendesk} ${this.fullscreenmobile}`}>
+           <img className={`z-0 BG ${this.fullscreendesk} ${this.fullscreenmobile}`} src={BG2} />
            {/*TEXTSSSSSSSSSSSSSSSSSSS*/}
            <div style={{height:"100%",width:"100%"}} className="TXT-CONT absolute top-0 z-50 flex md:flex-row flex-col md:p-6 justify-center gap-10 md:gap-36 items-center text-blue-400">
               <div className="md:scale-150 flex md:flex-col mt-20 items-center gap-2">
-                <motion.div dragConstraints={{top:0,left:0,right:0,bottom:0}} drag variants={this.box1Var} animate="visible" className="bg-bladck SEC1 p-3 text-center md:text-start ">
-                    <h4 className="lg:text-lg font-light text-white ">PROFESSIONAL</h4>
-                    <h2 className="lg:text-3xl text-2xl font-bold text-teal-100">TAMBAY</h2>
-                    <h2 className="text-white lg:text-3xl text-2xl brightness-150 p-1 border-2 border-teal-700 font-extralight"> KARMA</h2>
+                <motion.div dragConstraints={{top:-20,left:-20,right:20,bottom:20}} drag variants={this.box1Var} animate="visible" className="bg-bladck SEC1 p-3 text-center md:text-start ">
+                 <TypeAnimation
+                  className="lg:text-lg font-light text-white"
+                  sequence={[
+                    "PROFESSIONAL",2000
+                     ]}
+                  wrapper="h4"
+                  cursor={false}
+                  repeat={Infinity}
+                />
+                 <TypeAnimation
+                  className="lg:text-3xl text-2xl font-bold text-teal-100"
+                  sequence={[
+                    "TAMBAY",2000,"UNEMPLOYED",2000,"USELESS",2000
+                     ]}
+                  wrapper="h2"
+                  cursor={true}
+                  repeat={Infinity}
+                />
+                {/*
+                 <TypeAnimation
+                  className="text-white lg:text-3xl text-2xl brightness-150 p-1 border-2 border-teal-700 font-extralight"
+                  sequence={[
+                    "K",1000,"KA",1000,"KAR",1000,"KARM",1000,"KARMA"
+                     ]}
+                  wrapper="h2"
+                  cursor={false}
+                  repeat={0}
+                />*/}
+                <h2 className="text-white lg:text-3xl text-2xl brightness-150 p-1 border-2 border-teal-700 font-extralight">KARMA</h2>
+                 
+                  
                 </motion.div>
                 <motion.div variants={this.socmedVar} animate="visible" initial="hidden" className="flex flex-col md:flex-row gap-3">
                     <motion.div drag variants={this.socmedItemsVar} className="bg-blue-200 p-1">FB</motion.div>
@@ -154,9 +183,9 @@ socmedItemsVar={
               </motion.div>
            </div>
            {/*END OF TEXTSSSSSSSSSSSSSSSSSSS*/}
-           <motion.img variants={this.meVar} animate="visible" initial="hidden" style={{top:"30px",zIndex:49}} className={`absolute ME lg:min-h-screen ${this.fullscreenmobile}`} src={ME2} />
-           <motion.img variants={this.lcVar} whileInView="visible" initial="hidden" className={`scale-105 absolute top-0 blur-sm lg:min-h-screen ${this.fullscreenmobile}`}src={CL2} />
-           <motion.img variants={this.rcVar} whileInView="visible" initial="hidden" className={`scale-105 absolute top-0 blur-sm lg:min-h-screen ${this.fullscreenmobile}`} src={CR2} />
+           <motion.img variants={this.meVar} animate="visible" initial="hidden" style={{top:"30px",zIndex:49}} className={`absolute ME ${this.fullscreendesk} ${this.fullscreenmobile}`} src={ME2} />
+           <motion.img variants={this.lcVar} whileInView="visible" initial="hidden" className={`scale-105 absolute top-0 blur-sm ${this.fullscreendesk} ${this.fullscreenmobile}`}src={CL2} />
+           <motion.img variants={this.rcVar} whileInView="visible" initial="hidden" className={`scale-105 absolute top-0 blur-sm ${this.fullscreendesk} ${this.fullscreenmobile}`} src={CR2} />
         </motion.div>
       )
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import {motion} from "framer-motion";
-
+import Loading2 from "../assets/img/loading.svg"
 class Navbar extends React.Component{
   navLinks = ["Home","About Me", "Crushes","Skills","Projects"];
  
@@ -71,11 +71,14 @@ componentDidUpdate(prevProp,prevState){
             animate="visible"
             className="Nav z-50 flex justify-between items-center  p-3 fixed-top"
           >
-            <div className="text-white font-extralight">Karmz.js</div>
+            <div className="text-white font-extralight">{/*<img className="w-12" src={Loading2} />*/}Karmz.js</div>
             <ul className="hidden lg:flex transition-all">
               {this.navLinks?.map((e, i) => {
                 return (
                   <li
+                  onClick={() => {
+                    e === "Projects" &&  this.props.openProjects();
+                  }}
                     className="mx-4 text-white font-extralight hover:text-emerald-700 hover:scale-125"
                     key={i}
                   >
@@ -136,7 +139,11 @@ componentDidUpdate(prevProp,prevState){
                 {this.navLinks?.map((e, i) => {
                   return (
                     <li key={i} className="p-8 hover:bg-teal-400 hover:text-black text-white hover:font-medium font-extralight">
-                      <a  onClick={this.handleClick.bind(this)} href={`#${e === "About Me" ? "About" : e}`}>{e}</a>
+                      <a  onClick={() => {
+                        this.handleClick();
+                       console.log("PROPS:",this.props)
+                        e === "Projects" &&  this.props.openProjects();
+                      }} href={`#${e === "About Me" ? "About" : e}`}>{e}</a>
                     </li>
                   );
                 })}

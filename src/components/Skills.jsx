@@ -1,5 +1,7 @@
 import React from "react";
 import {motion} from "framer-motion";
+import { TypeAnimation } from 'react-type-animation';
+
 
 function Sk(img,title){
   this.img = img;
@@ -41,11 +43,22 @@ class Skills extends React.Component{
  // RWNDDEEEEEEEEEEEERRRRRR
   render(){
     return(
-         <div id="Skills" className="Skills  bg-teal-500 flex justify-center md:h-96">
-              <div className="">
+         <div id="Skills" className="Skills relative  bg-teal-500 flex  justify-cente px-12">
+              <TypeAnimation
+                  className="absolute text-teal-300 font-medium flex md:hidden"
+                  sequence={[
+                    "Thing's Im Good At",2000,"Thing's Im Fluent In",2000
+                     ]}
+                  wrapper="span"
+                  cursor={true}
+                  repeat={Infinity}
+                  style={{top:"-80px", left:"50%",transform:"translate(-50%,0%)"}}
+                />
+            
+              <div className="flex md:flex-row flex-col bordedr justify-center flex-wrap  gap-10 SKILLSS">
                  {this.skills.map((e,i)=>{
                    return (
-                        <div key={i} className="bg-teal-700 p-7">
+                        <div key={i} className="bg-teal-700 SKILLS-ITEMS  p-5 ">
                           <img src={e.img} />
                           <h6 className="">{e.title}</h6>
                        </div>
@@ -57,3 +70,6 @@ class Skills extends React.Component{
   }
 }
 export default Skills;
+
+
+

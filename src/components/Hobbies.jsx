@@ -69,17 +69,18 @@ class Hobbies extends React.Component{
  // RWNDDEEEEEEEEEEEERRRRRR
   render(){
     return (
-         <motion.div variants={this.hobVontVar} animate="visible" initial="hidden" id="Hobbies" className="Hobbies gap-4 flex flex-col  md:flex-row overflow-x-hidden md:overflow-x-scroll max-h-full max-w-full">
+         <motion.div variants={this.hobVontVar} animate="visible" initial="hidden" id="Hobbies" className="Hobbies   gap-4 flex flex-col  md:flex-row overflow-x-hidden  overflow-hidden hover:overflow-y-scroll md:overflow-y-hidden max-h-full max-w-full">
             {this.hobbies.length <= 0 && "No Hobbies"}
             {this.hobbies?.map((e,i) => {
               return(
-                  <motion.div whileHover="visible" variants={{}} key={i} className="bg-teal-600 hover:scale-110 hover:bg-teal-400 md:hover:scale-125 hover:shadow-2xl p-7 HOBCONT flex items-center justify-center flex-col transition-all duration-700 ease-in-out">
+                  <motion.div id={i} whileHover="visible" variants={{}} key={i} className="bg-teal-600 hover:scale-110 hover:bg-teal-400 md:hover:scale-125 hover:shadow-2xl p-7 HOBCONT flex items-center justify-center flex-col transition-all duration-700 ease-in-out">
                      <img src={e.img} Image />
                      <span className="p-5">{e.title}</span>
                      <span className="p-5">{e.description}</span>
                   </motion.div>
                 )
             })}
+            
          </motion.div>
       )
   }

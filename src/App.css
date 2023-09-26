@@ -96,17 +96,17 @@
 /*   height: auto;*/
 /*}*/
 
-.HOBCONT{
+.PROJCONT{
   min-height: 300px;
   min-width: 300px;
   border-radius: 20px;
   box-shadow: ;
 }
 
-.Hobbies {
+.Projects {
   margin: auto;
-  overflow-y: scroll;
-  overflow-x: scroll;
+  ovedrflow-y: scroll;
+  overflow-x: hidden;
   max-height: 500px;
   max-width: 70vw;
   padding: 20px;
@@ -115,42 +115,156 @@
   .ABOUT-ME {
     -webkit-box-reflfect: top 1px linear-gradient(transparent,transparent,rgba(0,0,0,.8)) ;
   }
-  .Hobbies {
-    padding: 80px;
+  .Projects {
+  padding: 80px;
   height: 2000px;
   -webkit-box-reflect: below -120px linear-gradient(transparent,transparent,#000f);
   }
 }
 
 @media(max-width:500px){
-  .Hobbies{
+  .Projects{
   /*-webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#000f);*/
     max-width: 90vw;
   }
-  .HOBCONT{
+  .PROJCONT{
     min-height: 200px;
     min-width: 200px;
-  }
+  
 }
-
-.MYHOBBIESLABEL {
+}
+.SLABEL {
   -webkit-box-reflect: below -50px linear-gradient(transparent,transparent,#000f)
 }
 
-.Hobbies:hover .HOBCONT{
+.Projects:hover .PROJCONT{
   opacity:.1;
 }
 
-.Hobbies .HOBCONT:hover {
+.Projects .PROJCONT:hover {
   opacity:1;
 }
 
 ::-webkit-scrollbar{
   width:5px;
-  background:teal;
-  display: none;
+  background:rgba(0,128,128,.4);
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgba(0,128,128,1);
+  border-radius: 20px;
 }
 
-.min-h-mobile{
-  min-height: 70vh;
+@media(max-width:400px){
+  .min-h-mobile{
+  min-height: 60vh;
+ }
 }
+
+@media(min-width:900px){
+  .min-h-deskt{
+     max-height: 60vh;
+     max-width:100vw;
+     min-width: 100vw;
+  }
+  .imgWidth{
+    object-fit: cover;
+  }
+  ::-webkit-scrollbar{
+  background:rgba(0,128,128,.2);
+  width:10px;
+  display: flex;
+  padding: 4px;
+  
+}
+
+.Projects{
+  
+}
+.Projects::-webkit-scrollbar{
+  overflow-y: hidden;
+  height:15px;
+  display: none;
+  }
+::-webkit-scrollbar-thumb{
+  background-color: rgba(0,128,128,1);
+  width: 20px;
+  border-radius: 20px;
+}
+
+.Projects:hover {
+  overflow-x: auto;
+}
+
+}
+
+
+.SKILLSS {
+  z-index: 10;
+  margin-top: -40px;
+  height: max-content;
+  width: 100%;
+}
+
+.SKILLS-ITEMS{
+  box-shadow: 2px 1px 15px 1px rgba(0,0,0,.4);
+  min-width: 250px;
+  min-height: 250px;
+}
+
+.Skills{
+  min-height: 700px;
+  padding-bottom: 50px;
+background-size: cover;
+  background-image: url("assets/img/bg2.svg");
+  backgrofund: rgba(22,216,216,1);
+backfgrfound: linear-gradient(360deg, rgba(12,54,54,1) 23%, rgba(22,216,216,1) 72%, rgba(19,223,228,1) 92%);
+}
+
+
+@media (min-width: 640px) {
+  
+}
+ @media (min-width: 768px) {
+   .SKILLS-ITEMS{
+       min-width: 300px;
+       min-height: 300px;
+     }
+ }
+@media (min-width: 1024px) {
+  .SKILLS-ITEMS{
+       min-width: 400px;
+       min-height: 400px;
+     }
+}
+@media (min-width: 1280px) {
+  .SKILLS-ITEMS{
+       min-width: 500px;
+       min-height: 500px;
+     }
+}
+ @media (min-width: 1536px) {
+     .SKILLS-ITEMS{
+       min-width: 500px;
+       min-height: 500px;
+     }
+ }
+ 
+ body {
+   backgro&und: red;
+ }
+ 
+ .App {
+   padding: 0;
+   margin: 0;
+   height: 100vh;
+ }
+ 
+ 
+ .Loader {
+   backgrofund-color: linear-gradient(bottom, #006666, #004c4c);
+   background: rgb(9,21,21);
+background: -moz-linear-gradient(360deg, rgba(9,21,21,1) 38%, rgba(8,42,42,1) 87%);
+background: -webkit-linear-gradient(360deg, rgba(9,21,21,1) 38%, rgba(8,42,42,1) 87%);
+background: linear-gradient(360deg, rgba(9,21,21,1) 38%, rgba(8,42,42,1) 87%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#091515",endColorstr="#082a2a",GradientType=1);
+ }
